@@ -11,6 +11,9 @@ export class ThemesList implements OnInit {
   constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
-    this.apiService.getThemes().subscribe(t => console.log(t));
+    this.apiService.getThemes().subscribe(themes => {
+      console.log(themes);
+      themes[0]
+    });
   }
 }

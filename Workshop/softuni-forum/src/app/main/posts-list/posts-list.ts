@@ -11,6 +11,9 @@ export class PostsList implements OnInit{
   constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {
-    this.apiService.getPosts().subscribe(p => console.log(p));
+    this.apiService.getPosts(5).subscribe(posts => {
+       console.log(posts)
+       posts[0]
+    });
   }
 }
