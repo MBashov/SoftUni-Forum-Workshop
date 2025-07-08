@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../../api.service';
 
 @Component({
   selector: 'app-themes-list',
@@ -6,6 +7,10 @@ import { Component } from '@angular/core';
   templateUrl: './themes-list.html',
   styleUrl: './themes-list.css'
 })
-export class ThemesList {
+export class ThemesList implements OnInit {
+  constructor(private apiService: ApiService) { }
 
+  ngOnInit(): void {
+    this.apiService.getThemes().subscribe(t => console.log(t));
+  }
 }
