@@ -3,24 +3,25 @@ import { Injectable } from '@angular/core';
 import { environment } from '../environments/environment.development';
 import { Post } from './types/post';
 import { Theme } from './types/theme';
+import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class ApiService {
-  constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient) { }
 
-  getPosts(limit?: number) {
-    let url = `${environment.apiUrl}/posts`;
+    getPosts(limit?: number): Observable<Post[]> {
+        let url = `${environment.apiUrl}/posts`;
 
-    if (limit) {
-      url += `?limit=${limit}`;
+        if (limit) {
+            url += `?limit=${limit}`;
+        }
+
+        return this.http.get<Post[]>(url);
     }
-    
-    return this.http.get<Post[]>(url);
-  }
 
-  getThemes() {
-    return this.http.get<Theme[]>(`${environment.apiUrl}/themes`);
-  }
+    getThemes(): Observable<Theme[]> {
+        return this.http.get<Theme[]>(`${environment.apiUrl}/themes`);
+    }
 }

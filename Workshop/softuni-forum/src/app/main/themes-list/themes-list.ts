@@ -4,21 +4,21 @@ import { Theme } from '../../types/theme';
 import { Loader } from '../../shared/loader/loader';
 
 @Component({
-  selector: 'app-themes-list',
-  imports: [Loader],
-  templateUrl: './themes-list.html',
-  styleUrl: './themes-list.css'
+    selector: 'app-themes-list',
+    imports: [Loader],
+    templateUrl: './themes-list.html',
+    styleUrl: './themes-list.css'
 })
 export class ThemesList implements OnInit {
-  themes: Theme[] = [];
-  isLoading: boolean = true;
+    themes: Theme[] = [];
+    isLoading: boolean = true;
 
-  constructor(private apiService: ApiService) { }
+    constructor(private apiService: ApiService) { }
 
-  ngOnInit(): void {
-    this.apiService.getThemes().subscribe(themes => {
-      this.themes = themes;
-      this.isLoading = false;
-    });
-  }
+    ngOnInit(): void {
+        this.apiService.getThemes().subscribe((themes: Theme[]) => {
+            this.themes = themes;
+            this.isLoading = false;
+        });
+    }
 }
