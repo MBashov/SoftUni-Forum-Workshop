@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { ThemesList } from "./themes-list/themes-list";
-import { PostsList } from "./posts-list/posts-list";
+import { ThemesList } from "../theme/themes-list/themes-list";
+import { PostsList } from "../posts-list/posts-list";
 
 @Component({
   selector: 'app-main',
@@ -9,5 +9,5 @@ import { PostsList } from "./posts-list/posts-list";
   styleUrl: './main.css'
 })
 export class Main {
-
+  
 }
