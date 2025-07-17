@@ -101,13 +101,13 @@
     display: flex;
 }
 
-.userdetails {
+.user-details {
     display: flex;
     flex-direction: column;
     text-align: center;
 }
 
-.userdetails p {
+.user-details p {
     padding-left: 0;
     text-align: left;
     color: #234465;
@@ -118,7 +118,7 @@
     color: white;
 }
 
-.userdetails div {
+.user-details div {
     border: 1px solid #999;
     display: flex;
     justify-content: center;
@@ -126,7 +126,7 @@
     background-color: #e4e3e3;
 }
 
-.userdetails img {
+.user-details img {
     padding: 0;
     align-self: center;
     margin: 1em 0;
