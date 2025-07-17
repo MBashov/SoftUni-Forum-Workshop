@@ -21,7 +21,7 @@ export const routes: Routes = [
         children: [
             { path: '', component: Main },
             { path: ':themeId', component: CurrentTheme },
-        ]
+        ],
     },
     { path: 'add-theme', component: AddTheme },
     { path: '404', component: Error },

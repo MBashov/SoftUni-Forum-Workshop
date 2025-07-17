@@ -24,4 +24,8 @@ export class ApiService {
     getThemes(): Observable<Theme[]> {
         return this.http.get<Theme[]>(`${environment.apiUrl}/themes`);
     }
+
+    getSingleTheme(themeId: string): Observable<Theme> {
+        return this.http.get<Theme>(`${environment.apiUrl}/themes/${themeId}`);
+    }
 }
