@@ -10,10 +10,15 @@ export class UserService {
 
     constructor() {
         try {
-
+            const lsUser = localStorage.getItem(this.USER_KEY) || '';
+            this.user = JSON.parse(lsUser);
         } catch (error) {
-
+            this.user = null;
         }
+    }
+
+    public get isLoggedIn(): boolean {
+        return !!this.user;
     }
 
     login() {
@@ -27,7 +32,7 @@ export class UserService {
         localStorage.setItem(this.USER_KEY, JSON.stringify(this.user));
     }
 
-    logout() { 
+    logout() {
         this.user = null;
         localStorage.removeItem(this.USER_KEY);
     }
