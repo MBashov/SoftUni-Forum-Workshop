@@ -1,8 +1,11 @@
 <div class="container">
     <div class="welcome">
         <h3>Welcome!</h3>
+        @if (isLoggedIn) {
         <p>SoftUni forum is a place, where you can post your questions, comment, and discuss problems, which
             you have in your programming language or in your study in SoftUni.</p>
+        } @else {
+
         <div class="logged">
             <ul>
                 <li>
@@ -19,5 +22,6 @@
                 </li>
             </ul>
         </div>
+        }
     </div>
 </div>

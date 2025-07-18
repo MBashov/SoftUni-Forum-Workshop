@@ -1,6 +1,10 @@
+@if (isLoggedIn) {
 <div class="container">
     <main>
         <app-themes-list />
     </main>
-        <app-posts-list />
+    <app-posts-list />
 </div>
+    } @else {
+    <app-home/>
+}
