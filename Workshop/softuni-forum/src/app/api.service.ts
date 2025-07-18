@@ -28,4 +28,9 @@ export class ApiService {
     getSingleTheme(themeId: string): Observable<Theme> {
         return this.http.get<Theme>(`${environment.apiUrl}/themes/${themeId}`);
     }
+
+    createTeam(themeName: string, postText: string) {
+        const payload = {themeName, postText}
+        return this.http.post<Theme>(`${environment.apiUrl}/themes`, payload);
+    }   
 }
